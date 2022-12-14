@@ -1,0 +1,110 @@
+{% comment %} <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Zloac's Twitter</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/kesfet/">Discover</a>
+          </li>
+
+          {% if user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/user/profil/">{{request.user}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/olustur/">Post</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/user/logout/">Logout</a>
+              </li>
+          {% else %}
+              <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/user/login/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user/register/">Register</a>
+            </li>
+          {% endif %}
+
+      </div>
+    </div>
+  </nav> {% endcomment %}
+
+
+  <!-- Navbar  -->
+    <nav class="navbar top navbar-expand-lg navbar-dark p-md-3">
+      <div class="container">
+        <a class="navbar-brand" href="/">Zloactwitter</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="mx-auto"></div>
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/kesfet/">Discover</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/user/profil/">{{request.user}}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/olustur/">Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/user/logout/">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/user/login/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="/user/register/">Register</a>
+            </li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <hr>
+
+    {% comment %} <!-- Banner Image  -->
+    <div
+      class="banner-image w-100 vh-100 d-flex justify-content-center align-items-center"
+    >
+      <div class="content text-center">
+        <h1 class="text-white">WEB ZONE</h1>
+      </div>
+    </div> {% endcomment %}
+
+    
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+      var nav = document.querySelector('nav');
+
+      window.addEventListener('scroll', function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add('bg-dark', 'shadow');
+        } else {
+          nav.classList.remove('bg-dark', 'shadow');
+        }
+      });
+    </script>

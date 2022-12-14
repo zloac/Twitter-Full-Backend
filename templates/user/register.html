@@ -1,0 +1,23 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <form action="" method="POST" enctype="multipart/form-data" class="w-50 m-auto border p-4">
+            {% csrf_token %}
+            <label for="">Username</label>
+            <input type="text" name="kullanici" required id="" class="form-control">
+            <label for="">Email</label>
+            <input type="email" name="email" id="" required class="form-control">
+            <label for="">Name</label>
+            <input type="text" name="isim" id="" required class="form-control">
+            <label for="">Lastname</label>
+            <input type="text" name="soyisim" id="" required class="form-control">
+            <label for="">Password</label>
+            <input type="password" name="sifre1" id="" required class="form-control">
+            <label for="">Password again</label>
+            <input type="password" name="sifre2" id="" required class="form-control">
+            <input type="submit" value="Register" class="btn btn-primary">
+        </form>
+    </div>
+{% endblock content %}
